@@ -150,8 +150,6 @@
 	};
 
 	
-	
-	
 	var siteStellar = function() {
 		$(window).stellar({
 	    responsive: true,
@@ -163,6 +161,15 @@
 	  });
 	};
 	
+		// loader
+		var loader = function() {
+			setTimeout(function() { 
+				if($('#ftco-loader').length > 0) {
+					$('#ftco-loader').removeClass('show');
+				}
+			}, 2000);
+		};
+		loader();
 
 
 
@@ -240,6 +247,8 @@
 		$('.image-popup').magnificPopup({
 			type: 'image',
 			removalDelay: 300,
+			closeOnContentClick: true,
+			closeBtnInside: true,
 			mainClass: 'mfp-with-zoom',
 			gallery:{
 				enabled:true
@@ -330,7 +339,16 @@
 	});
 
 	
-
+ /*------------------
+        Magnific Popup
+    --------------------*/
+    $('.pop-up').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		closeBtnInside: false
+	});
 
 })();
+
+
 
